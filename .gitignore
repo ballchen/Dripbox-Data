@@ -1,0 +1,14 @@
+*.swp
+.jshintrc
+.DS_Store
+node_modules/
+*.log
+.idea
+config/*.js
+config/*.pem
+!config/default.js
+!config/index.js
+!config/travis.js
+coverage/
+avatars/
+dump.rdb
