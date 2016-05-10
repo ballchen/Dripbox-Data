@@ -12,6 +12,17 @@ const config = {
     host: process.env.REDIS_HOST || '127.0.0.1',
     port: +process.env.REDIS_PORT || 6379,
     password: process.env.REDIS_PASSWORD
+  },
+  mongo: {
+    host: process.env.MONGO_HOST || '0.0.0.0',
+    port: process.env.MONGO_PORT || 27017,
+    db: process.env.MONGO_DB || 'metadata'
+  },
+  aws: {
+    signatureVersion: process.env.AWS_SIGNATURE || 'v4',
+    accessKeyId: process.env.AWS_KEY,
+    secretAccessKey: process.env.AWS_SECRET,
+    Bucket: process.env.AWS_BUCKET
   }
 }
 

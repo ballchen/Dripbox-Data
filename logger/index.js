@@ -1,12 +1,12 @@
-'use strict';
+'use strict'
 
-const bunyan = require('bunyan');
-const config = require('../config');
+const bunyan = require('bunyan')
+const config = require('../config')
 
 const logger = bunyan.createLogger({
-  name: 'dripbox-metadata',
+  name: 'dripbox-data',
   level: config.logLevel,
   serializers: bunyan.stdSerializers
-});
+})
 
-module.exports = logger;
+module.exports = logger
