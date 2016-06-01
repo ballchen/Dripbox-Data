@@ -6,15 +6,15 @@ const bodyParser = require('koa-bodyparser')
 const mongo = require('koa-mongo')
 const config = require('./config')
 
-var session = require('koa-generic-session')
-var redisStore = require('koa-redis')
+let session = require('koa-generic-session')
+let redisStore = require('koa-redis')
 
 const app = koa()
 require('koa-qs')(app)
 app.env = process.env.NODE_ENV || 'development'
 
 app.keys = ['drip', 'dripdrip']
-app.use(cors());
+app.use(cors())
 app.use(session({
   store: redisStore(config.redis)
 }))
@@ -27,7 +27,7 @@ app.proxy = true
 app.use(require('./routes'))
 
 app.on('error', function (err) {
-  this.log.error(err)
+  console.log(err)
 })
 
 module.exports = app
